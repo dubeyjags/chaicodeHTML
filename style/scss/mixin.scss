@@ -1,0 +1,12 @@
+@for $i from 1 through 10 {
+    .marginT#{$i}0 {
+        margin-top: $i*10+px
+    }
+}
+
+@mixin boxWhite($padding:0){
+    background   : #ffffff;
+    border-radius: 16px;
+    box-shadow   : 0 8px 20px rgba(0, 0, 0, 0.05);
+    padding      : $padding;
+}

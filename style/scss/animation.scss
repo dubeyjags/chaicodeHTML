@@ -1,0 +1,20 @@
+@keyframes fadeInZoom {
+    0% {
+        opacity  : 0;
+        transform: translate(-50%, -50%) scale(1.6);
+    }
+
+    100% {
+        opacity  : 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+@keyframes live {
+    0% {
+        opacity  : 0;
+    }
+
+    100% {
+        opacity  : 1;
+    }
+}
