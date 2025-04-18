@@ -4,9 +4,17 @@
     }
 }
 
-@mixin boxWhite($padding:0){
+@mixin boxWhite($padding:0) {
     background   : #ffffff;
     border-radius: 16px;
     box-shadow   : 0 8px 20px rgba(0, 0, 0, 0.05);
     padding      : $padding;
+}
+
+@mixin responsive($property, $small, $large) {
+    #{$property}: $large;
+
+    @media (max-width: 768px) {
+        #{$property}: $small;
+    }
 }

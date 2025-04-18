@@ -1,0 +1,88 @@
+@media only screen and (max-width:560px) {
+    #header {
+        position: relative;
+        .logo .menu{
+            display: inline-block;
+            &:hover{
+                background: #b4b4b4;
+            }
+        }
+        nav {
+            display: none;
+            position: absolute;
+            left: 0;
+            top: 100%;
+            ul{
+                flex-direction: column;
+                background-color: #fff;
+                padding: 20px;
+                li a{
+                    display: block;
+                    width: 100%;
+                    box-sizing: border-box;
+                    margin: 0;
+                    padding: 10px 0;
+                }
+            }
+        }
+    }
+
+    .twitter{
+        flex-direction: column;
+        .twitter-card{
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+        }
+    }
+    .cohorts ul {
+        flex-direction: column;
+    }
+
+    .course-carousel-section .carousel-wrapper .course-card {
+        flex-direction: column-reverse;
+        padding       : 0;
+    }
+
+    .chaicode-section .parts {
+        grid-template-columns: 1fr;
+        grid-template-rows   : auto;
+
+        .part:nth-child(4) {
+            grid-row   : auto;
+            grid-column: auto;
+
+            img {
+                width: 100%;
+            }
+        }
+    }
+
+    .apps-section .apps-grid {
+        grid-template-columns: auto;
+    }
+
+    .network-section .map-container {
+        width: 100%;
+    }
+    .freeApi-section .feeApi-details{
+        flex-direction: column;
+    }
+    footer .container{
+        flex-direction: column-reverse;
+        h1{
+            top: auto;
+            bottom: -7vh;
+        }
+        .left{
+            text-align: center;
+            margin-top: 2vh;
+            ul{
+                display: inline-flex;
+            }
+        }
+        .right{
+            justify-content: space-between;
+        }
+    }
+}

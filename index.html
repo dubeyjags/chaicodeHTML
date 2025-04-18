@@ -11,7 +11,9 @@
 <body>
     <header id="header">
         <div class="container">
-            <div class="logo"><img src="images/chaicode-black.svg" alt=""></div>
+            <div class="logo">
+                <button class="menu">&#9776;</button>
+                <img src="images/chaicode-black.svg" alt=""></div>
             <nav>
                 <ul>
                     <li><a href="#">Cohorts <span class="live"></span></a></li>
@@ -90,21 +92,20 @@
         </div>
     </section>
     <section class="students-section">
-        <h2 class="section-heading">
+        <div class="container"><h2 class="section-heading">
             Our <span>STUDENTS</span> are not only working in big tech companies
         </h2>
         <p class="section-subheading">
             but are now founders of funded startups and product creators
         </p>
         <div class="logos">
-
             <div class="logo"><img src="images/google.png" alt="Google" /></div>
             <div class="logo"><img src="images/social.png" alt="Amazon" /></div>
             <div class="logo"><img src="images/google.png" alt="Google" /></div>
             <div class="logo"><img src="images/social.png" alt="Amazon" /></div>
             <div class="logo"><img src="images/google.png" alt="Google" /></div>
             <div class="logo"><img src="images/social.png" alt="Amazon" /></div>
-        </div>
+        </div></div>
     </section>
 
     <section class="cohorts">
@@ -314,22 +315,24 @@
         </div>
     </section>
     <section class="network-section">
-        <div class="network-content">
-            <h2>Alumni Network and Job Listings</h2>
-            <p>
-                The alumni network you always wished your college had. We’ve built a dedicated platform
-                where students collaborate on projects, create agencies, and participate in hackathons.
-                Our HR team regularly posts job opportunities that you can apply for whenever you're ready.
-            </p>
-            <div class="avatars">
-                <img src="https://pbs.twimg.com/profile_images/1724344976715468800/MasktpKz_400x400.jpg"
-                    alt="Hitesh C" />
-                <img src="https://pbs.twimg.com/profile_images/1879075502356586496/V9wQzW7V_400x400.jpg" alt="Piyush" />
-                <img src="https://pbs.twimg.com/profile_images/1877597004169359361/9Vu5A11t_400x400.jpg"
-                    alt="Anirudh" />
-                <img src="https://pbs.twimg.com/profile_images/1886363558432165888/3R_sXNG8_400x400.jpg" alt="Akash" />
-                <img src="https://pbs.twimg.com/profile_images/1783347464575254528/iisg5A6T_400x400.jpg" alt="JD" />
-                <span class="more">+300</span>
+        <div class="container">
+            <div class="network-content">
+                <h2>Alumni Network and Job Listings</h2>
+                <p>
+                    The alumni network you always wished your college had. We’ve built a dedicated platform
+                    where students collaborate on projects, create agencies, and participate in hackathons.
+                    Our HR team regularly posts job opportunities that you can apply for whenever you're ready.
+                </p>
+                <div class="avatars">
+                    <img src="https://pbs.twimg.com/profile_images/1724344976715468800/MasktpKz_400x400.jpg"
+                        alt="Hitesh C" />
+                    <img src="https://pbs.twimg.com/profile_images/1879075502356586496/V9wQzW7V_400x400.jpg" alt="Piyush" />
+                    <img src="https://pbs.twimg.com/profile_images/1877597004169359361/9Vu5A11t_400x400.jpg"
+                        alt="Anirudh" />
+                    <img src="https://pbs.twimg.com/profile_images/1886363558432165888/3R_sXNG8_400x400.jpg" alt="Akash" />
+                    <img src="https://pbs.twimg.com/profile_images/1783347464575254528/iisg5A6T_400x400.jpg" alt="JD" />
+                    <span class="more">+300</span>
+                </div>
             </div>
         </div>
     </section>
@@ -395,7 +398,7 @@
                 </div>
                 <div class="part">
                     <img src="https://pbs.twimg.com/profile_images/1724344976715468800/MasktpKz_400x400.jpg"
-                        alt="Hitesh C" />
+                        alt="Hitesh C" class="profile" />
                     <div>
                         <div class="title">Hitesh Choudhary</div>
                         <div class="info">retired from corporate and full time YouTuber, x founder of LCO (acquired), x
@@ -481,7 +484,7 @@
                     </p>
                 </div>
                 <div class="vid">
-                    <iframe width="420" height="250" src="https://www.youtube.com/embed/DxedlhTyR7Q">
+                    <iframe style="width: 100%; max-width: 400px;" height="250" src="https://www.youtube.com/embed/DxedlhTyR7Q">
                     </iframe>
                 </div>
             </div>
@@ -593,6 +596,36 @@
             <h1>CHAIAURCODE</h1>
         </div>
     </footer>
+    <script>
+        let menu = document.querySelector('.menu')
+        let nav = document.querySelector("#header nav")
+        menu.addEventListener("click", () =>{
+            console.log(nav.style.display);
+            
+            if(nav.style.display == "block"){
+                nav.style.display= "none"
+            } else {
+                nav.style.display= "block"
+            }
+        })
+        window.addEventListener("scroll", function () {
+  const sections = document.querySelectorAll("section");
+
+  sections.forEach(section => {
+    const rect = section.getBoundingClientRect();
+    const sectionTop = rect.top;
+    const sectionHeight = rect.height;
+
+    // If section is in view (customize threshold if needed)
+    if (sectionTop <= window.innerHeight / 2 && sectionTop + sectionHeight > window.innerHeight / 2) {
+      section.classList.add("active");
+    } else {
+    //   section.classList.remove("active");
+    }
+  });
+});
+
+    </script>
 </body>
 
 </html>
