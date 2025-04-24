@@ -45,24 +45,10 @@
         padding       : 0;
     }
 
-    .chaicode-section .parts {
-        grid-template-columns: 1fr;
-        grid-template-rows   : auto;
-
-        .part:nth-child(4) {
-            grid-row   : auto;
-            grid-column: auto;
-
-            img {
-                width: 100%;
-            }
-        }
+    .apps-section .apps-grid .app-box{
+        margin-bottom: 20px;
     }
-
-    .apps-section .apps-grid {
-        grid-template-columns: auto;
-    }
-
+    
     .network-section .map-container {
         width: 100%;
     }

@@ -493,7 +493,6 @@ section {
         }
     }
     &.network-section {
-        background-color: #fff7f1;
         padding         : 4rem 0;
         text-align      : center;
     
@@ -607,16 +606,17 @@ section {
         text-align: center;
     
         .parts {
-            display              : grid;
             grid-template-columns: 1fr 1fr 1fr;
             grid-template-rows   : 1fr 1fr 1fr;
             gap                  : 20px;
-            margin               : 30px 0;
+            margin               : 30px 0;            
+            @include responsive(display,block,grid);
     
             .part {
                 @include boxWhite(1.5rem);
                 text-align: center;
-                transition: transform .3s ease;
+                transition: transform .3s ease; 
+                @include responsive(margin-bottom,20px,0);
     
                 &:nth-child(4) {
                     grid-row       : 1 / 4;
@@ -624,6 +624,7 @@ section {
                     display        : flex;
                     flex-direction : column;
                     justify-content: space-between;
+                    @include responsive(order,1,auto);
                 }
                 .profile{
                     border-radius: 50%;
@@ -724,6 +725,137 @@ section {
             font-weight     : 600;
             box-shadow      : 0 4px 12px rgba(255, 125, 12, 0.15);
             display         : inline-block;
+        }
+    }
+    &.freeApi-section {
+        padding   : 4rem 0;
+        text-align: center;
+    
+        h2 {
+            font-size    : 2rem;
+            color        : #1f1f1f;
+            font-weight  : 700;
+            margin-bottom: 2rem;
+        }
+    
+        .feeApi-details {
+            display        : flex;
+            justify-content: space-between;
+            align-items    : center;
+            gap            : 2rem;
+            flex-wrap      : wrap;
+            margin-bottom  : 2rem;
+    
+            .info {
+                flex      : 1;
+                text-align: left;
+    
+                .title {
+                    font-size    : 1.5rem;
+                    font-weight  : 600;
+                    color        : #ff7d0c;
+                    margin-bottom: 1rem;
+                }
+    
+                p {
+                    font-size  : 1rem;
+                    color      : #444;
+                    line-height: 1.7;
+                }
+            }
+    
+            .vid {
+                flex      : 1;
+                text-align: center;
+    
+                img,
+                video {
+                    max-width    : 100%;
+                    border-radius: 12px;
+                    box-shadow   : 0 6px 20px rgba(0, 0, 0, 0.1);
+                }
+            }
+        }
+    
+        .btn {
+            background-color: #ff7d0c;
+            color           : #fff;
+            font-weight     : 600;
+            padding         : 0.8rem 1.6rem;
+            font-size       : 1rem;
+            border          : none;
+            border-radius   : 8px;
+            cursor          : pointer;
+            transition      : background 0.3s ease;
+    
+            &:hover {
+                background-color: $color-primary-dark;
+            }
+        }
+    }
+    
+    &.apps-section {
+        padding   : 4rem 0;
+    
+        .apps-grid {
+            grid-template-columns: repeat(auto-fit, minmax(40%, 1fr));
+            gap                  : 2rem;
+            position             : relative;
+            @include responsive(display,block,grid);
+    
+            .app-box {
+                @include boxWhite(1rem);
+                position       : relative;
+                z-index        : 1;
+                transition     : transform 0.3s ease, box-shadow 0.3s ease;
+                background     : #fff url("../images/chai-gray.svg") no-repeat right;
+                background-size: auto 50%;
+                padding-right  : 70px;
+    
+                &:hover {
+                    transform : translateY(-4px);
+                    box-shadow: 0 10px 24px rgba(255, 125, 12, 0.15);
+                }
+    
+                .title {
+                    font-size    : 1.3rem;
+                    font-weight  : 700;
+                    color        : #ff7d0c;
+                    margin-bottom: 1rem;
+                }
+    
+                p {
+                    font-size  : 1rem;
+                    color      : #444;
+                    line-height: 1.6;
+                }
+    
+                &.discords {
+                    background: linear-gradient(135deg, #5865f2, #404eed);
+                    color     : #fff;
+                    text-align: center;
+    
+                    .title {
+                        color: #fff;
+                    }
+    
+                    button {
+                        margin-top      : 1rem;
+                        background-color: #fff;
+                        color           : #404eed;
+                        border          : none;
+                        padding         : 0.6rem 1.2rem;
+                        font-weight     : 600;
+                        border-radius   : 8px;
+                        cursor          : pointer;
+                        transition      : background 0.3s ease;
+    
+                        &:hover {
+                            background: #dcdcdc;
+                        }
+                    }
+                }
+            }
         }
     }
 }
