@@ -1,0 +1,39 @@
+@use 'var'as *;
+@use 'mixin'as *;
+@use 'animation'as *;
+
+.btn {
+    padding      : 0.6rem 1.5rem;
+    border-radius: 4px;
+    font-weight  : 600;
+    border       : none;
+    cursor       : pointer;
+    transition   : all 0.3s ease;
+    box-shadow: 0 0 3px $color-primary-light;
+
+    &.btn-default {
+        background: transparent;
+        border    : 2px solid $color-primary;
+        color     : $color-primary;
+
+        &:hover {
+            background: $color-primary;
+            color     : white;
+        }
+    }
+
+    &.btn-primary {
+
+        background: $color-primary;
+        color     : white;
+        
+        &:hover {
+            background: $color-primary-dark;
+        }
+    }
+
+    &.btn-lg {
+        padding  : min(1rem, 2rem);
+        @include responsive(font-size, 1rem, 2rem);
+    }
+}

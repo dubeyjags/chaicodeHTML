@@ -1,20 +1,40 @@
+@use 'var' as *;
+
 @for $i from 1 through 10 {
     .marginT#{$i}0 {
         margin-top: $i*10+px
     }
 }
 
+$colors: (
+  primary: $color-primary,
+  text: $color-text,
+  light: $color-text-light
+);
+@each $key, $value in $colors {
+    .text-#{$key} {
+      color: #{$value};
+    }
+  }
+
 @mixin boxWhite($padding:0) {
     background   : #ffffff;
     border-radius: 16px;
     box-shadow   : 0 8px 20px rgba(0, 0, 0, 0.05);
     padding      : $padding;
+
+    &:hover {
+        box-shadow: 0 0 4px $color-primary-light;
+        transform : scale(1.02);
+        transition: all 0.3s;
+        transform : translateY(-4px);
+    }
 }
 
 @mixin responsive($property, $small, $large) {
     #{$property}: $large;
 
-    @media (max-width: 768px) {
+    @media (max-width: 576px) {
         #{$property}: $small;
     }
 }

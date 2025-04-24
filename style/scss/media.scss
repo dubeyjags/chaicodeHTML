@@ -1,6 +1,7 @@
 @media only screen and (max-width:560px) {
     #header {
-        position: relative;
+        position: flex;
+        flex-grow: 1;
         .logo .menu{
             display: inline-block;
             &:hover{

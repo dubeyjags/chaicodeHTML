@@ -1,0 +1,69 @@
+@use 'var'as *;
+@use 'mixin'as *;
+@use 'animation'as *;
+
+#header {
+    .container {
+        display        : flex;
+        justify-content: space-between;
+        align-items    : center;
+        margin         : 20px auto;
+    }
+
+    .logo {
+        display    : flex;
+        align-items: center;
+
+        .menu {
+            background   : #fff;
+            border       : 2px solid #b4b4b4;
+            padding      : 0px 5px;
+            margin-right : 10px;
+            border-radius: 4px;
+            color        : #000;
+            font-size    : 20px;
+            display: none;
+        }
+
+        img {
+            max-width: 120px;
+        }
+    }
+
+    nav ul {
+        display        : flex;
+        justify-content: center;
+        list-style-type: none;
+        margin         : 0;
+        padding        : 0;
+
+        li a {
+            color          : $color-text;
+            text-decoration: none;
+            display        : inline-block;
+            padding        : 10px;
+            margin         : 0 10px;
+            border-radius  : 4px;
+            position       : relative;
+
+            &::after {
+                width     : 100%;
+                position  : absolute;
+                content   : '';
+                height    : 2px;
+                background: $color-primary;
+                left      : 0;
+                bottom    : 2px;
+                opacity   : 0;
+            }
+
+            &.active {
+                color: $color-primary;
+
+                &::after {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}
