@@ -22,7 +22,10 @@
                     <li><a href="#">Reviews</a></li>
                 </ul>
             </nav>
-            <button class="btn btn-default">Login</button>
+            <div>
+                <button class="btn btn-default">Login</button>
+                <button id="darkModeToggle" class="toggle-dark-mode">🌙</button>
+            </div>
         </div>
     </header>
     <section class="hero">
@@ -609,21 +612,36 @@
             }
         })
         window.addEventListener("scroll", function () {
+            window.addEventListener("scroll", function () {
   const sections = document.querySelectorAll("section");
+  const triggerBottom = window.innerHeight * 0.9; // when 20% of section visible
 
-  sections.forEach(section => {
-    const rect = section.getBoundingClientRect();
-    const sectionTop = rect.top;
-    const sectionHeight = rect.height;
+  sections.forEach((section) => {
+    const sectionTop = section.getBoundingClientRect().top;
 
-    // If section is in view (customize threshold if needed)
-    if (sectionTop <= window.innerHeight / 2 && sectionTop + sectionHeight > window.innerHeight / 2) {
+    if (sectionTop < triggerBottom) {
       section.classList.add("active");
     } else {
-    //   section.classList.remove("active");
+      section.classList.remove("active");
     }
   });
 });
+
+
+});
+const toggleBtn = document.getElementById('darkModeToggle');
+
+toggleBtn.addEventListener('click', () => {
+  document.body.classList.toggle('dark');
+
+  // Optional: Change icon 🌙☀️
+  if (document.body.classList.contains('dark')) {
+    toggleBtn.textContent = '☀️';
+  } else {
+    toggleBtn.textContent = '🌙';
+  }
+});
+
 
     </script>
 </body>
